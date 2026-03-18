@@ -1,0 +1,43 @@
+:root {
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+  --parallax-filter: none;
+  --glow-color: transparent;
+  --text-shadow: none;
+}
+
+.theme-nerd {
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --border-radius: 0px;
+  --transition-speed: 0.2s;
+  --parallax-filter: hue-rotate(180deg) saturate(1.5);
+  --glow-color: rgba(0, 240, 255, 0.4);
+  --text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.theme-retro {
+  --font-heading: 'Special Elite', cursive;
+  --font-body: 'Courier New', monospace;
+  --font-mono: 'Courier New', monospace;
+  --border-radius: 2px;
+  --transition-speed: 0.5s;
+  --parallax-filter: sepia(0.3) contrast(0.9);
+  --glow-color: transparent;
+  --text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.theme-coding {
+  --font-heading: 'Fira Code', monospace;
+  --font-body: 'Fira Code', monospace;
+  --font-mono: 'Fira Code', monospace;
+  --border-radius: 0px;
+  --transition-speed: 0.15s;
+  --parallax-filter: brightness(0.7) contrast(1.2);
+  --glow-color: rgba(0, 255, 65, 0.3);
+  --text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+}

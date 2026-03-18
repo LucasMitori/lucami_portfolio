@@ -1,0 +1,98 @@
+.theme-retro {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+
+  .v-card {
+    border-radius: var(--border-radius) !important;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    box-shadow: 3px 3px 0 rgba(139, 69, 19, 0.1) !important;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px) rotate(-0.5deg);
+      box-shadow: 5px 5px 0 rgba(139, 69, 19, 0.2) !important;
+    }
+  }
+
+  .v-btn {
+    border-radius: var(--border-radius) !important;
+    text-transform: none;
+    letter-spacing: 1px;
+    border: 2px solid currentColor !important;
+    font-family: var(--font-heading);
+  }
+
+  .parallax-overlay {
+    background: linear-gradient(135deg, rgba(245, 230, 211, 0.3), rgba(139, 69, 19, 0.1));
+    filter: sepia(0.1);
+  }
+
+  .hero-section {
+    background: linear-gradient(160deg, #F5E6D3 0%, #efe0d0 30%, #f0dcc8 60%, #F5E6D3 100%);
+
+    .shape {
+      background: #8B4513 !important;
+      opacity: 0.04 !important;
+      border-radius: 0 !important;
+      transform: rotate(45deg);
+    }
+
+    .grid-overlay {
+      background-image: none !important;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 30px,
+          rgba(139, 69, 19, 0.03) 30px,
+          rgba(139, 69, 19, 0.03) 31px
+        ) !important;
+    }
+
+    .hero-badge {
+      border-color: rgba(139, 69, 19, 0.3);
+      border-style: dashed;
+    }
+
+    .hero-title {
+      text-shadow: 2px 2px 0 rgba(139, 69, 19, 0.1);
+    }
+
+    .typewriter-prefix {
+      content: '>';
+    }
+  }
+
+  .code-window {
+    border: 2px solid rgba(139, 69, 19, 0.3) !important;
+    box-shadow: 6px 6px 0 rgba(139, 69, 19, 0.15) !important;
+    border-radius: 4px !important;
+  }
+
+  .skill-card {
+    border-color: rgba(139, 69, 19, 0.15) !important;
+
+    &:hover {
+      transform: translateY(-2px) rotate(-0.5deg) !important;
+      box-shadow: 4px 4px 0 rgba(139, 69, 19, 0.15) !important;
+    }
+  }
+
+  .section-line {
+    background: #8B4513 !important;
+    height: 2px !important;
+  }
+
+  .contact-card {
+    border: 2px dashed rgba(139, 69, 19, 0.2) !important;
+
+    &:hover {
+      box-shadow: 4px 4px 0 rgba(139, 69, 19, 0.15) !important;
+      transform: translateY(-3px) rotate(-1deg) !important;
+    }
+  }
+
+  .project-featured-card {
+    border: 2px solid rgba(139, 69, 19, 0.2);
+    box-shadow: 5px 5px 0 rgba(139, 69, 19, 0.1);
+  }
+}

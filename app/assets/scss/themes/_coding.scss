@@ -1,0 +1,209 @@
+.theme-coding {
+  // Multi-color terminal palette
+  // Green: primary, Amber: warnings/accents, Cyan: types/info, Magenta: keywords
+  $green: #00FF41;
+  $amber: #FFB000;
+  $cyan: #00D4FF;
+  $magenta: #FF00AA;
+  $red: #FF3333;
+
+  .v-card {
+    border-radius: 0 !important;
+    border: 1px solid rgba($green, 0.25);
+    background: rgba(17, 17, 17, 0.95) !important;
+    transition: all 0.15s ease;
+
+    &:hover {
+      border-color: rgba($cyan, 0.6);
+      box-shadow: 0 0 12px rgba($cyan, 0.1) !important;
+    }
+  }
+
+  .v-btn {
+    border-radius: 0 !important;
+    text-transform: none;
+    font-family: 'Fira Code', monospace;
+    border: 1px solid rgba($green, 0.4) !important;
+
+    // Terminal prompt prefix — exclude rating/icon-only buttons
+    &:not(.v-rating__item):not([aria-label*="Rating"])::before {
+      content: '> ';
+      opacity: 0.5;
+    }
+
+    &:hover {
+      border-color: rgba($amber, 0.7) !important;
+      box-shadow: 0 0 8px rgba($amber, 0.2) !important;
+    }
+  }
+
+  // Remove terminal styling from rating buttons
+  .v-rating .v-btn {
+    border: none !important;
+
+    &::before {
+      content: none !important;
+    }
+  }
+
+  .hero-section {
+    background: #0A0A0A;
+
+    .grid-overlay {
+      background-image: none !important;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba($green, 0.015) 2px,
+          rgba($green, 0.015) 4px
+        ) !important;
+    }
+
+    .hero-badge {
+      border-color: rgba($cyan, 0.4);
+      font-family: 'Fira Code', monospace;
+    }
+
+    .hero-title {
+      text-shadow: 0 0 20px rgba($green, 0.3);
+    }
+
+    .title-accent {
+      text-shadow: 0 0 30px rgba($green, 0.4), 0 0 60px rgba($green, 0.15);
+    }
+
+    .hero-typewriter {
+      color: rgba($amber, 0.85);
+    }
+  }
+
+  // Code window - syntax highlighting with multiple colors
+  .code-window {
+    border: 1px solid rgba($green, 0.35) !important;
+    box-shadow: 0 0 30px rgba($green, 0.08), 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+
+    .code-header {
+      background: rgba($green, 0.04) !important;
+
+      .dot.red { background: $red; }
+      .dot.yellow { background: $amber; }
+      .dot.green { background: $green; }
+
+      .code-title { color: rgba($green, 0.5); }
+    }
+
+    .kw { color: $magenta !important; }     // keywords: const, export, default
+    .var { color: $cyan !important; }        // variable names
+    .prop { color: $green !important; }      // property names
+    .str { color: $amber !important; }       // strings
+    .bool { color: $cyan !important; }       // booleans
+    .line-num { color: rgba($green, 0.25) !important; }
+  }
+
+  .orbit-item {
+    border-color: rgba($cyan, 0.4) !important;
+    box-shadow: 0 0 10px rgba($cyan, 0.15) !important;
+  }
+
+  .orbit-ring {
+    border-color: rgba($green, 0.15) !important;
+  }
+
+  // Skills
+  .section-tag {
+    color: $cyan !important;
+    text-shadow: 0 0 8px rgba($cyan, 0.5);
+  }
+
+  .section-title {
+    text-shadow: 0 0 15px rgba($green, 0.2);
+  }
+
+  .section-line {
+    background: linear-gradient(90deg, $green, $cyan) !important;
+    box-shadow: 0 0 8px rgba($green, 0.4);
+  }
+
+  .skill-card {
+    border-color: rgba($green, 0.12) !important;
+
+    &:hover {
+      border-color: rgba($cyan, 0.5) !important;
+      box-shadow: 0 0 15px rgba($cyan, 0.1) !important;
+    }
+  }
+
+  .skill-bar-fill {
+    background: linear-gradient(90deg, $green, $cyan) !important;
+    box-shadow: 0 0 6px rgba($green, 0.4);
+  }
+
+  // Contact
+  .contact-tag {
+    border-color: rgba($cyan, 0.3) !important;
+    color: $cyan !important;
+    background: rgba($cyan, 0.06) !important;
+  }
+
+  .contact-card {
+    border-color: rgba($green, 0.15) !important;
+
+    &:hover {
+      box-shadow: 0 0 20px rgba($amber, 0.12) !important;
+      border-color: rgba($amber, 0.4) !important;
+    }
+  }
+
+  // Stats cards
+  .stat-value {
+    text-shadow: 0 0 12px rgba($green, 0.5);
+  }
+
+  // Footer
+  .carousel-chip {
+    border-color: rgba($green, 0.15) !important;
+
+    &:hover {
+      border-color: rgba($cyan, 0.4) !important;
+      color: $cyan !important;
+    }
+  }
+
+  .footer-heading {
+    color: $amber !important;
+    text-shadow: 0 0 6px rgba($amber, 0.3);
+  }
+
+  // Floating button
+  .fab-inner {
+    box-shadow: 0 0 20px rgba($green, 0.3), 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .hub-item-inner {
+    border-color: rgba($green, 0.3) !important;
+
+    &:hover {
+      border-color: $cyan !important;
+      box-shadow: 0 0 15px rgba($cyan, 0.3) !important;
+    }
+  }
+
+  // Subtle scanline effect
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.2;
+  }
+}

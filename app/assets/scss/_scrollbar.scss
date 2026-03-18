@@ -1,0 +1,76 @@
+// ── Global Scrollbar Styling ──
+// Themed, smooth, semi-transparent scrollbars across the entire project.
+// Each theme gets its own accent color so scrollbars feel native to the design.
+
+// ── Base (html / body) ──
+html {
+  scroll-behavior: smooth;
+}
+
+// ── Shared scrollbar mixin ──
+@mixin themed-scrollbar($color, $track-opacity: 0.04, $thumb-opacity: 0.18, $thumb-hover-opacity: 0.35, $radius: 100px) {
+  // Firefox
+  scrollbar-width: thin;
+  scrollbar-color: rgba($color, $thumb-opacity) transparent;
+
+  // Webkit (Chrome, Edge, Safari)
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba($color, $track-opacity);
+    border-radius: $radius;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($color, $thumb-opacity);
+    border-radius: $radius;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: rgba($color, $thumb-hover-opacity);
+    }
+
+    &:active {
+      background: rgba($color, $thumb-hover-opacity + 0.1);
+    }
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+// ── Default theme: soft purple ──
+.theme-default,
+.theme-default * {
+  @include themed-scrollbar(#6C63FF, 0.03, 0.14, 0.28);
+}
+
+// ── Nerd theme: cyan glow ──
+.theme-nerd,
+.theme-nerd * {
+  @include themed-scrollbar(#00F0FF, 0.04, 0.2, 0.4, 0px);
+}
+
+// ── Retro theme: warm brown ──
+.theme-retro,
+.theme-retro * {
+  @include themed-scrollbar(#8B4513, 0.04, 0.16, 0.3, 2px);
+}
+
+// ── Coding theme: terminal green ──
+.theme-coding,
+.theme-coding * {
+  @include themed-scrollbar(#00FF41, 0.03, 0.16, 0.35, 0px);
+}
+
+// ── Fallback for unthemed context (body-level scroll) ──
+html,
+body {
+  @include themed-scrollbar(#6C63FF, 0.02, 0.12, 0.25);
+}

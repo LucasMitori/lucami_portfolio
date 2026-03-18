@@ -1,0 +1,36 @@
+.theme-default {
+  .v-card {
+    border-radius: var(--border-radius) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(108, 99, 255, 0.15) !important;
+    }
+  }
+
+  .v-btn {
+    border-radius: var(--border-radius) !important;
+    text-transform: none;
+  }
+
+  .parallax-overlay {
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.15), rgba(46, 196, 182, 0.1));
+  }
+
+  .hero-section {
+    background: linear-gradient(160deg, #f8f9fe 0%, #eef0ff 30%, #f0f4ff 60%, #fafafa 100%);
+  }
+
+  .skill-card:hover {
+    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.12) !important;
+  }
+
+  .section-line {
+    background: linear-gradient(90deg, #6C63FF, #2EC4B6) !important;
+  }
+
+  .code-window {
+    box-shadow: 0 25px 60px rgba(108, 99, 255, 0.15);
+  }
+}

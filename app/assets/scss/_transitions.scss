@@ -1,0 +1,88 @@
+// Page transitions - fluid morphing
+.page-enter-active {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  filter: blur(4px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.98);
+  filter: blur(2px);
+}
+
+// Fade transition
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity var(--transition-speed) ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// Slide transitions
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-left-enter-from {
+  transform: translateX(60px);
+  opacity: 0;
+  filter: blur(2px);
+}
+.slide-left-leave-to {
+  transform: translateX(-60px);
+  opacity: 0;
+}
+
+.slide-right-enter-from {
+  transform: translateX(-60px);
+  opacity: 0;
+  filter: blur(2px);
+}
+.slide-right-leave-to {
+  transform: translateX(60px);
+  opacity: 0;
+}
+
+// Scale transition
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+  filter: blur(2px);
+}
+
+// Layout transition
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.layout-enter-from {
+  opacity: 0;
+  filter: blur(8px);
+}
+
+.layout-leave-to {
+  opacity: 0;
+  filter: blur(4px);
+}

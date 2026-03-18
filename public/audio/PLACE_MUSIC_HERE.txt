@@ -1,0 +1,23 @@
+MUSIC FILE PLACEMENT GUIDE
+===========================
+
+Place your theme-specific music files in these directories:
+
+public/audio/default/   -> background.mp3   (Default theme music)
+public/audio/nerd/      -> background.mp3   (Nerd/cyberpunk theme music)
+public/audio/retro/     -> background.mp3   (Retro theme music)
+public/audio/coding/    -> background.mp3   (Coding/terminal theme music)
+
+Each theme can also have a typing sound:
+public/audio/default/   -> typing.mp3
+public/audio/nerd/      -> typing.mp3
+public/audio/retro/     -> typing.mp3
+public/audio/coding/    -> typing.mp3
+
+Supported formats: .mp3, .ogg, .wav, .webm
+
+The music system will automatically load the correct file based on the active theme.
+Volume and playback are controlled via the floating hub button.
+
+For the video/gif showcase in the Contact section:
+public/media/coding-showcase.gif   (or .mp4, .webm)

@@ -1,0 +1,37 @@
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.text-h1, .text-h2, .text-h3, .text-h4, .text-h5, .text-h6 {
+  font-family: var(--font-heading) !important;
+  text-shadow: var(--text-shadow);
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono) !important;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  animation: blink 1s step-end infinite;
+
+  .theme-retro & {
+    width: 8px;
+    height: 1.2em;
+    background: currentColor;
+  }
+
+  .theme-coding & {
+    width: 10px;
+    height: 1.2em;
+    background: #00FF41;
+  }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
