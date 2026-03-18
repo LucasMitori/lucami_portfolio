@@ -26,7 +26,7 @@
                                 class="contact-cards d-flex gap-4 flex-wrap mt-8"
                             >
                                 <a
-                                    href="mailto:contact@lucasmitori.dev"
+                                    href="mailto:devmitori@gmail.com"
                                     class="contact-card"
                                 >
                                     <div class="card-icon-wrap">
@@ -37,7 +37,7 @@
                                     <div>
                                         <span class="card-label">Email</span>
                                         <span class="card-value"
-                                            >contact@lucasmitori.dev</span
+                                            >devmitori@gmail.com</span
                                         >
                                     </div>
                                 </a>
@@ -60,7 +60,7 @@
                                     </div>
                                 </a>
                                 <a
-                                    href="https://linkedin.com/in/"
+                                    href="https://www.linkedin.com/in/lucas-mitori/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="contact-card"
@@ -273,7 +273,7 @@ const initialOptions: ChatOption[] = [
             },
             {
                 text: "Are you available for hire?",
-                reply: "Yes! I'm currently open to new opportunities - both freelance projects and full-time positions. I specialize in building scalable web applications. Feel free to reach out at contact@lucasmitori.dev!",
+                reply: "Yes! I'm currently open to new opportunities - both freelance projects and full-time positions. I specialize in building scalable web applications. Feel free to reach out at devmitori@gmail.commitori.dev!",
                 next: [
                     {
                         text: "What kind of projects do you take?",
@@ -303,11 +303,11 @@ const initialOptions: ChatOption[] = [
     },
     {
         text: t("home.chatContact") || "How can I contact you?",
-        reply: "Multiple ways to reach me!\n\n Email: contact@lucasmitori.dev\n GitHub: github.com/LucasMitori\n LinkedIn: Lucas Mitori\n\nI usually respond within 24 hours. For urgent matters, email is best!",
+        reply: "Multiple ways to reach me!\n\n Email: devmitori@gmail.commitori.dev\n GitHub: github.com/LucasMitori\n LinkedIn: Lucas Mitori\n\nI usually respond within 24 hours. For urgent matters, email is best!",
         next: [
             {
                 text: "Send an email",
-                reply: "Opening your email client to compose a message to contact@lucasmitori.dev...",
+                reply: "Opening your email client to compose a message to devmitori@gmail.commitori.dev...",
             },
             {
                 text: "View GitHub profile",
@@ -377,7 +377,7 @@ function selectOption(option: ChatOption) {
     } else if (lowerText.includes("send an email")) {
         addBotMessage(option.reply);
         setTimeout(
-            () => window.open("mailto:contact@lucasmitori.dev", "_blank"),
+            () => window.open("mailto:devmitori@gmail.commitori.dev", "_blank"),
             1500,
         );
     } else if (lowerText.includes("view github")) {
