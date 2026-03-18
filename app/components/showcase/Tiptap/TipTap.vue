@@ -11,7 +11,7 @@ import suggestion from "./extensions/Suggestion";
 import Underline from "@tiptap/extension-underline";
 import Link from "@tiptap/extension-link";
 import Image from "@tiptap/extension-image";
-import ImageUploadNode from "./extensions/ImageUpload";
+import ImageUploadNode from "./extensions/ImageUploadExt";
 
 const props = defineProps({
     content: {

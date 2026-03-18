@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from "vue";
-import Calculator from "./calculator.vue";
+import Calculator from "./calcuFloat.vue";
 import CallManager from "./callManager.vue";
 import ChatSupport from "./chatSupport.vue";
 import KnowledgeBase from "./knowledgeBase.vue";
@@ -180,7 +180,9 @@ onBeforeUnmount(() => {
     -webkit-transition: -webkit-transform ease-out 200ms;
     transition: -webkit-transform ease-out 200ms;
     transition: transform ease-out 200ms;
-    transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+    transition:
+        transform ease-out 200ms,
+        -webkit-transform ease-out 200ms;
 }
 
 .menu-open {
@@ -269,7 +271,9 @@ button:hover,
     -webkit-transition: -webkit-transform 200ms;
     transition: -webkit-transform 200ms;
     transition: transform 200ms;
-    transition: transform 200ms, -webkit-transform 200ms;
+    transition:
+        transform 200ms,
+        -webkit-transform 200ms;
 }
 
 .line-1 {
@@ -542,7 +546,8 @@ button:hover,
     min-height: 400px;
     padding: 40px 30px 30px;
     border-radius: 20px;
-    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    box-shadow:
+        25px 25px 75px rgba(0, 0, 0, 0.25),
         10px 10px 70px rgba(0, 0, 0, 0.25),
         inset -5px -5px 15px rgba(0, 0, 0, 0.25),
         inset 5px 5px 15px rgba(0, 0, 0, 0.25);
@@ -556,8 +561,10 @@ button:hover,
     margin: 8px;
     height: 80px;
     background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
-    box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
-        inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
+    box-shadow:
+        inset -8px 0 8px rgba(0, 0, 0, 0.15),
+        inset 0 -8px 8px rgba(0, 0, 0, 0.25),
+        0 0 0 2px rgba(0, 0, 0, 0.75),
         10px 20px 25px rgba(0, 0, 0, 0.4);
     user-select: none;
     cursor: pointer;
@@ -576,7 +583,8 @@ button:hover,
     right: 12px;
     border-radius: 10px;
     background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
-    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1),
+    box-shadow:
+        -5px -5px 15px rgba(0, 0, 0, 0.1),
         10px 5px 10px rgba(0, 0, 0, 0.15);
     border-left: 1px solid #0004;
     border-bottom: 1px solid #0004;
