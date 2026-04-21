@@ -1,3 +1,76 @@
+<script setup lang="ts">
+interface TestimonialItem {
+    _id: string;
+    authorName: string;
+    authorEmail?: string;
+    content: string;
+    rating: number;
+    section: string;
+    createdAt: string;
+}
+
+const testimonials = ref<TestimonialItem[]>([]);
+const loading = ref(true);
+const deleting = ref(false);
+const deleteDialog = ref(false);
+const testimonialToDelete = ref<TestimonialItem | null>(null);
+
+const snackbar = ref(false);
+const snackbarText = ref("");
+const snackbarColor = ref("success");
+const { t: $t } = useI18n();
+
+function showToast(message: string, color = "success") {
+    snackbarText.value = message;
+    snackbarColor.value = color;
+    snackbar.value = true;
+}
+
+async function loadTestimonials() {
+    loading.value = true;
+    try {
+        const allComments = await $fetch<TestimonialItem[]>(
+            "/api/admin/comments",
+        );
+        testimonials.value = allComments.filter(
+            (c) => c.section === "testimonial",
+        );
+    } catch {
+        testimonials.value = [];
+        showToast("Failed to load testimonials", "error");
+    } finally {
+        loading.value = false;
+    }
+}
+
+function confirmDelete(testimonial: TestimonialItem) {
+    testimonialToDelete.value = testimonial;
+    deleteDialog.value = true;
+}
+
+async function executeDelete() {
+    if (!testimonialToDelete.value) return;
+    deleting.value = true;
+    try {
+        await $fetch(`/api/admin/comments/${testimonialToDelete.value._id}`, {
+            method: "DELETE",
+        });
+        testimonials.value = testimonials.value.filter(
+            (t) => t._id !== testimonialToDelete.value!._id,
+        );
+        deleteDialog.value = false;
+        testimonialToDelete.value = null;
+        showToast("Testimonial deleted successfully");
+    } catch {
+        showToast("Failed to delete testimonial", "error");
+    } finally {
+        deleting.value = false;
+    }
+}
+
+onMounted(loadTestimonials);
+</script>
+
 <template>
     <div class="admin-testimonial-manager">
         <v-progress-linear v-if="loading" indeterminate class="mb-4" />
@@ -8,7 +81,7 @@
             variant="tonal"
             class="mb-4"
         >
-            {{ t("testimonials.adminEmpty") }}
+            {{ $t("testimonials.adminEmpty") }}
         </v-alert>
 
         <v-row v-if="testimonials.length">
@@ -147,78 +220,6 @@
         </v-snackbar>
     </div>
 </template>
-
-<script setup lang="ts">
-interface TestimonialItem {
-    _id: string;
-    authorName: string;
-    authorEmail?: string;
-    content: string;
-    rating: number;
-    section: string;
-    createdAt: string;
-}
-
-const testimonials = ref<TestimonialItem[]>([]);
-const loading = ref(true);
-const deleting = ref(false);
-const deleteDialog = ref(false);
-const testimonialToDelete = ref<TestimonialItem | null>(null);
-
-const snackbar = ref(false);
-const snackbarText = ref("");
-const snackbarColor = ref("success");
-
-function showToast(message: string, color = "success") {
-    snackbarText.value = message;
-    snackbarColor.value = color;
-    snackbar.value = true;
-}
-
-async function loadTestimonials() {
-    loading.value = true;
-    try {
-        const allComments = await $fetch<TestimonialItem[]>(
-            "/api/admin/comments",
-        );
-        testimonials.value = allComments.filter(
-            (c) => c.section === "testimonial",
-        );
-    } catch {
-        testimonials.value = [];
-        showToast("Failed to load testimonials", "error");
-    } finally {
-        loading.value = false;
-    }
-}
-
-function confirmDelete(testimonial: TestimonialItem) {
-    testimonialToDelete.value = testimonial;
-    deleteDialog.value = true;
-}
-
-async function executeDelete() {
-    if (!testimonialToDelete.value) return;
-    deleting.value = true;
-    try {
-        await $fetch(`/api/admin/comments/${testimonialToDelete.value._id}`, {
-            method: "DELETE",
-        });
-        testimonials.value = testimonials.value.filter(
-            (t) => t._id !== testimonialToDelete.value!._id,
-        );
-        deleteDialog.value = false;
-        testimonialToDelete.value = null;
-        showToast("Testimonial deleted successfully");
-    } catch {
-        showToast("Failed to delete testimonial", "error");
-    } finally {
-        deleting.value = false;
-    }
-}
-
-onMounted(loadTestimonials);
-</script>
 
 <style scoped>
 .testimonial-admin-card {
